@@ -1,0 +1,270 @@
+#tv-box{
+    background:linear-gradient(rgba(235, 14, 206, 0.785),#121212);
+    color: whitesmoke;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.3s ease-in-out;
+}
+#tv-box h2{
+    font-size: 20px;
+    padding: 20px 0px 0px 40px;
+}
+#tv-grid{
+    border-bottom: solid 2px black;
+}
+.showsimg{
+    display: grid;
+    grid-template-columns: repeat(20,1fr);
+    gap: 2%;
+    overflow-x: scroll;
+    padding-top: 15px;
+    margin: 0px 40px 0px 40px;
+}
+#tv-id{
+    display: none;
+}
+.tv-image{
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    margin-bottom: 50px;
+    box-sizing: border-box;
+}
+.tv-image img{
+    width: 150px;
+    height: 200px;
+    border: solid 1px #121212;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+.tv-image img:hover{
+    transform: scale(1.2);
+}
+#genretv-id{
+    display: none;
+}
+#inteltv{
+    display: none;
+}
+body, html {
+    height:100%;
+}
+
+#overviewtv-page{
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0%;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+}
+#overviewtv-page img{
+    margin: 60px 40px 40px 60px;
+    border: solid 1px #121212;
+    border-radius: 8px;
+}
+#overviewtv-page button{
+    margin-top: 10px;
+    padding:8px 12px 8px 12px;
+    border: solid 1px #12121210;
+    border-radius: 60px;
+    text-align: center; 
+}
+#add-to-watchlisttv-btn:hover::after{
+    content: 'Add to watchlist';
+    position: absolute;
+    background-color: #1212128a;
+    top: 44%;
+    left: 31%;
+    padding: 6px;
+    border: solid 1px #1212128a;
+    border-radius: 6px;
+}
+#add-videotv-btn:hover::after{
+    content: 'Watch Trailer';
+    position: absolute;
+    background-color: #1212128a;
+    top: 44%;
+    left: 38%;
+    padding: 6px;
+    border: solid 1px #1212128a;
+    border-radius: 6px;
+}
+#datatv{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-right: 50px;
+    color: white;
+}
+#datatv h1{
+    font-size: 40px;
+}
+#datatv p{
+    font-size: 16px; 
+}
+#add-ratingtv-btn{
+    margin-left: 8px;
+    margin-right: 8px;
+}
+#paratv{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+#date{
+    color: rgba(249, 242, 242, 0.756);
+    font-size: 10px;
+    font-weight: lighter;
+}
+@media(max-width:830px){
+    #overviewtv-page{
+        display: flex;
+        flex-direction: column;
+    }
+    #overviewtv-page img{
+        width:130px;
+        height: 180px;
+        margin: 20px 30px 0px 40px;
+    }
+    #datatv{
+        align-items: center;
+        justify-content: space-around;
+        text-align: center;
+        margin-right: 0px;
+        color: whitesmoke;
+        font-family: 'poppins', sans-serif;
+    }
+    #datatv h1{
+        font-size: 30px;
+    }
+    #datatv h2{
+       font-size: 20px;
+    }
+    #datatv p{
+        font-size: 14px;
+        padding: 0px 60px 0px 60px;
+    } 
+    #paratv{
+        align-items: center;
+        text-align: center;
+        margin-bottom:50px;
+    }
+   
+} 
+
+#searchtv-page{
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0%;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+}
+#searchtv-page img{
+    z-index: 100000;
+    width: 400px;
+    height: 500px;
+    margin: 20px 40px 30px 60px;
+    border: solid 1px #121212;
+    border-radius: 8px;
+}
+.databasetv{
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+    margin-right: 100px;
+    color: whitesmoke;
+    font-family: 'poppins', sans-serif;
+}
+.databasetv h1{
+    font-family: 'Poppins', sans-serif;
+    color: whitesmoke;
+    font-size: 40px;
+}
+.databasetv h2{
+    font-family: 'Poppins', sans-serif;
+    margin-top: 60px;
+    margin-bottom: 10px;
+}
+.databasetv p{
+    font-size: 16px;
+    margin-bottom: 20px; 
+}
+#movie-genretv{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    margin:0px 40px;
+    padding-top: 100px;
+    overflow-y: hidden;
+} 
+#movie-genretv h2{
+    position: absolute;
+    font-family: 'poppins',sans-serif;
+    font-size: 30px;
+    color: whitesmoke;
+    top: 60px;
+    left: 60px;
+}
+.imgtv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 100px;
+    color: whitesmoke;
+    
+    
+} 
+.imgtv img{
+    width: 150px;
+    height: 200px;
+    margin: 20px;
+    border: solid 1px #121212;
+    border-radius: 8px;
+}
+
+#watchlisttv{
+    display: grid;
+    grid-template-rows: repeat(1fr);
+    gap: 25px;
+    margin-top: 30px;
+    font-family: 'poppins',sans-serif;
+}
+#watchlisttv img{
+    width: 133.33px;
+    height: 200px;
+    border: solid 1px #121212;
+    border-radius: 10px;
+}
+#watchlisttv h1{
+    font-size: 35px;
+    color: rgb(242, 52, 242);
+    padding: 20px 0px 0px 20px;
+}
+.listtv{
+    display: flex;
+    box-sizing: border-box;
+    border: solid 1px  #161212;
+    border-radius:10px;
+    margin: 10px 25px 10px 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: whitesmoke;
+}
+.listtv:hover{
+    box-shadow: 0px 0px 10px rgba(245, 245, 245, 0.867);
+}
+.informationtv{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    margin: 20px;
+    font-size: 14px;
+}
+.informationtv p{
+    padding-top: 30px;
+}

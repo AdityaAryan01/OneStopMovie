@@ -1,0 +1,832 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+::-webkit-scrollbar{
+    width: 0.5em;
+    height: 0.5em;
+}
+::-webkit-scrollbar-track{
+    background-color: #231d1d;
+    border-radius: 100vw;
+}::-webkit-scrollbar-thumb{
+    background-color: rgba(234, 233, 233, 0.871);
+    border-radius: 100vw;
+    width: 55vw;
+}
+
+button{
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    border: none;
+    background-color: #121212c4;
+    color:rgba(245, 245, 245, 0.943) ;
+    cursor: pointer;
+}
+body{
+    font-family: 'Poppins';
+    background-color:#191717;
+    color: rgb(223, 66, 237);
+    transition: background-color 0.3s ease-in-out;
+    overflow-x: none;
+
+}
+#return{
+    position: fixed;
+    top: 6px;
+    left: 4px;
+    z-index: 100000;
+}
+#return button{
+    padding: 5px 8px 5px 8px;
+    font-size: 14px;
+    border: solid 1px #121212;
+    border-radius: 60px;
+}
+#return-search{
+    position: absolute;
+    top: 6px;
+    left: 4px;
+    z-index: 100000;
+}
+#return-search button{
+    padding: 5px 8px 5px 8px;
+    font-size: 14px;
+    border: solid 1px #121212;
+    border-radius: 60px;
+}
+#navbar{
+    background-color: #121212e4;
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    top: 0%;
+    z-index: 10000000;
+    transition:0.3s ease-in-out;
+    
+} 
+#navbar.active{
+    transform: translateY(-200px);
+    transition: transform 0.8s;
+}
+.container{
+    margin-top: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 20px 0px 50px;
+    height: 100%;
+    
+}
+#head{
+    font-size: 25px;
+    font-family: 'Poppins', sans-serif;
+    color:rgb(223, 66, 237);
+    text-shadow: 0px 0px 4px rgb(247, 5, 154);
+    transition: 0.3s ease-in-out;
+ 
+}
+
+
+.links{
+    display: flex;
+    
+}
+.link{
+    padding: 30px;
+    
+}
+#toggle-btn button{
+    background-color: transparent;
+    font-size: 16px;
+}
+#toggleday i{
+    color: black;
+}
+
+.drop-down{
+    display: none;
+    position: absolute;
+    top: 40px;
+    right:420px;
+    padding:10px 30px 10px 0px;
+    border-radius: 6px;
+    background-color: whitesmoke;
+}
+.drop-down button{
+    text-decoration: none;
+    border: solid 1px whitesmoke;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+}
+.drop-down li{
+   margin:6px 35px 0px 20px;
+    list-style-type: none;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    color:black;
+}
+.drop-down.active{
+    display: block;
+}
+.drop-down-tv{
+    display: none;
+    position: absolute;
+    top: 40px;
+    right:280px;
+    padding:10px 30px 10px 0px;
+    border-radius: 6px;
+    background-color: whitesmoke;
+}
+.drop-down-tv button{
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    border: solid 1px whitesmoke;
+    border-radius: 6px;
+    background-color: whitesmoke;
+}
+.drop-down-tv li{
+    margin:6px 35px 0px 20px;
+    list-style-type: none;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    color: black;
+}
+.drop-down-tv.active{
+    display: block;
+}
+.drop-down-wl{
+    display: none;
+    position: absolute;
+    top: 40px;
+    right:175px;
+    padding:10px 20px 10px 0px;
+    border-radius: 6px;
+    background-color: whitesmoke;
+}
+.drop-down-wl button{
+    text-decoration: none;
+    border: solid 1px whitesmoke;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+}
+.drop-down-wl li{
+   margin:6px 15px 0px 10px;
+    list-style-type: none;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    color:black;
+}
+.drop-down-wl.active{
+    display: block;
+}
+.drop-down.active{
+    display: block;
+}
+.drop-down-profile{
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 55px;
+    padding:10px 10px 10px 0px;
+    border-radius: 6px;
+    background-color: whitesmoke;
+}
+.drop-down-profile button{
+    text-decoration: none;
+    border: solid 1px whitesmoke;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+}
+.drop-down-profile li{
+    margin:6px 10px 0px 10px;
+    list-style-type: none;
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+}
+#signOutButton{
+    margin:6px 10px 0px 10px;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+}
+.drop-down-profile.active{
+    display: block;
+}
+.main-menu{
+    display: none;
+}
+.drop-down-menu{
+    padding:10px 10px 10px 0px;
+    border-radius: 6px;
+    background-color:#121212de;
+}
+.drop-down-menu button{
+    text-decoration: none;
+    border: solid 1px #121212de;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    background-color: #12121294;
+}
+.drop-down-menu li{
+    margin:6px 10px 0px 10px;
+    list-style-type: none;
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 12px;
+    font-weight: bold;
+}
+#navbar .links .lii{
+    padding: 16px;
+    font-family: 'Poppins', sans-serif;
+    transition: transform 0.3s ease-in;
+}
+#navbar a{
+    text-decoration: none;
+    color:rgba(245, 245, 245, 0.943);
+}
+#profile{
+    background-color:#121212;
+    font-size: 16px;
+}
+#hamburger{
+    position: absolute;
+    top: 20%;
+    right: 20px;
+    font-size: 14px;
+    z-index: 1000;
+    color: whitesmoke;
+}
+#hamburger button{
+    background-color: transparent;
+    text-decoration: none;
+    border-radius: 60px;
+    height: 40px;
+    padding: 20px 10px 0px 10px; 
+    font-size: 14px;
+    display: none;
+    cursor: pointer;
+}
+#hamburger button:hover{
+    background-color: rgba(203, 192, 192, 0.783);
+}
+.main-menu{
+    display: none;
+    background-color:#121212de;
+    width: 35%;
+    height:100vh;
+    position:fixed ;
+    top: 60px;
+    right: -400px;
+    transition: 0.3s right ease-in-out;
+}
+.main-menu.active{
+    right: 0;
+}
+
+@media(max-width:800px){
+    #hamburger button{
+        display: flex;
+    }
+    .links{
+        display: none;
+    }
+    .main-menu{
+        display: block;
+    }
+    .link2{
+        display: flex;
+        flex-direction: column;
+    }
+    .link2 .lii{
+        padding: 12px;
+        margin-left: 20px;
+    }
+    #profile{
+        display: none;
+    }
+}
+
+
+body, html {
+    height: 100%;
+}
+
+#showcase{
+    height: 350px;
+}
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.628), rgba(219, 91, 231, 0.699)), url("images/netflix-s.png");
+  height: 110%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.showcase-container{
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    width: 85%;
+    position: absolute;
+    top: 120px;
+}
+#header{
+    font-family: 'Poppins';
+    font-size: 44px;
+    color: whitesmoke;
+    text-shadow: 0px 0px 2px whitesmoke;
+}
+#header-2{
+    font-family: 'Poppins', sans-serif;
+    font-size: 44px;
+    color: whitesmoke;
+}
+.form-group{
+    display: flex;
+}
+.form-group input[type="text"]{
+    margin-top: 40px;
+    padding: 12px 0px 12px 12px;
+    text-decoration: none;
+    background-color: #121212;
+    color: whitesmoke;
+    border: solid 1px  #121212;
+    border-radius: 30px ;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
+}
+#searchbtn{
+    font-family: 'Poppins', sans-serif;
+    background:linear-gradient(to left, rgba(244, 12, 213, 0.909),#a605c2e2);
+    width: 8em;
+    height:3.5em;
+    border: solid 1px #a505c2f9;
+    border-radius: 30px;
+    position: absolute;
+    right: 2px;
+    top: 107px;
+}
+#searchbtn:hover{
+    background-color: rgb(235, 14, 205);
+    color:#121212 ;
+    transition: 0.2s ease-in-out;
+}
+@media(max-width:600px){
+    #searchbtn{
+        top:172px;
+    }
+}
+#movie-box{
+    margin-top: 40px;
+    color: whitesmoke;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.3s ease-in-out;
+}
+#movie-box h2{
+    font-size: 20px;
+    padding: 40px 0px 0px 40px;
+}
+#img-grid{
+    box-sizing: border-box;
+    border-bottom: solid 1px #121111;
+}
+.image{
+    display: grid;
+    grid-template-columns: repeat(20,1fr);
+    gap: 2%;
+    overflow-x: scroll;
+    padding-top: 15px;
+    margin: 0px 40px 0px 40px;
+}
+
+.search-image{
+    display: grid;
+    grid-template-columns: repeat(20,1fr);
+    gap: 2%;
+    overflow-x: scroll;
+    padding-top: 15px;
+    margin:100px 40px 0px 40px;
+    color: whitesmoke;
+}
+#movie-id{
+    display: none;
+}
+.movie-image{
+    font-size: 15px;
+    box-sizing: border-box;
+}
+.movie-image img{
+    width: 150px;
+    height: 200px;
+    border: solid 1px #121212;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+.movie-image img:hover{
+    transform: scale(1.2);
+}
+.search-movie-image{
+    font-size: 15px;
+    box-sizing: border-box;
+}
+.search-movie-image img{
+    width: 150px;
+    height: 200px;
+    border: solid 1px #121212;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+.search-movie-image img:hover{
+    transform: scale(1.2);
+}
+#genre-id{
+    display: none;
+}
+#intel{
+    display: none;
+}
+#release-date{
+    display: none;
+}
+
+
+body, html {
+    height:100%;
+}
+
+#overview-page{
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0%;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+}
+#overview-page img{
+    margin: 60px 40px 40px 60px;
+    border: solid 1px #121212;
+    border-radius: 8px;
+}
+#overview-page button{
+    margin-top: 10px;
+    padding:8px 12px 8px 12px;
+    border: solid 1px #12121210;
+    border-radius: 60px;
+    text-align: center; 
+}
+#add-to-watchlist-btn:hover::after{
+    content: 'Add to watchlist';
+    position: absolute;
+    background-color: #1212128a;
+    top: 44%;
+    left: 31%;
+    padding: 6px;
+    border: solid 1px #1212128a;
+    border-radius: 6px;
+}
+
+#add-video-btn:hover::after{
+    content: 'Watch Trailer';
+    position: absolute;
+    background-color: #1212128a;
+    top: 44%;
+    left: 38%;
+    padding: 6px;
+    border: solid 1px #1212128a;
+    border-radius: 6px;
+}
+
+#data{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-right: 50px;
+    color: white;
+}
+#data h1{
+    font-size: 40px;
+}
+#data p{
+    font-size: 16px; 
+}
+
+#para{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+#date{
+    color: rgba(249, 242, 242, 0.756);
+    font-size: 10px;
+    font-weight: lighter;
+}
+#add-rating-btn{
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.drop-down-rating{
+    display: none;
+}
+.drop-down-rating.active{
+    display: block;
+}
+#rate-list{
+    list-style-type: none;
+    text-decoration: none;
+}
+.popup{
+    background-color: #121212;
+    padding: 10px;
+    border: solid 1px #12121274;
+    border-radius: 30px;
+   display: none;
+}
+.popup button{
+    color:rgb(69, 244, 16);
+}
+.popup.active{
+    display: block;
+    position: absolute;
+    top:-100px;
+    left: 50%;
+    animation-name:slide-down;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+    transition: 0.5s;
+}
+@keyframes slide-down {
+    0%{
+        transform: translateY(-50px);
+    }
+    40%{
+        transform: translateY(150px);
+    }
+    50%{
+        transform: translateY(150px);
+    }
+    60%{
+        transform: translateY(150px);
+    }
+    70%{
+        transform: translateY(150px);
+    }
+    100%{
+        transform: translateY(-50px);
+    }
+}
+#display-video{
+    position:absolute;
+    top: 16%;
+    left: 25%;
+}
+ @media(max-width:850px){
+    #overview-page{
+        display: flex;
+        flex-direction: column;
+    }
+    #overview-page img{
+        width:130px;
+        height: 180px;
+        margin: 20px 30px 0px 40px;
+    }
+    #data{
+        align-items: center;
+        justify-content: space-around;
+        text-align: center;
+        margin-right: 0px;
+        color: whitesmoke;
+        font-family: 'poppins', sans-serif;
+    }
+    #data h1{
+        font-size: 30px;
+    }
+    #data h2{
+       font-size: 20px;
+    }
+    #data p{
+        font-size: 14px;
+        padding: 0px 60px 0px 60px;
+    } 
+    #para{
+        align-items: center;
+        text-align: center;
+        margin-bottom:50px;
+    }
+    #display-video iframe{
+        height: 220px;
+        width: 300px;
+        position: absolute;
+        left: 0%;
+    }
+} 
+.give-rating{
+    display: none;
+    margin-top: 10px;
+    border: solid 1px #121212;
+}
+
+
+body, html {
+    height:100%;
+}
+
+#search-page{
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0%;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+}
+#search-page img{
+    margin: 60px 40px 40px 60px;
+    border: solid 1px #121212;
+    border-radius: 8px;
+}
+#search-page button{
+    margin-top: 10px;
+    padding:8px 12px 8px 12px;
+    border: solid 1px #12121210;
+    border-radius: 60px;
+    text-align: center; 
+}
+#watchlistbtn:hover::after{
+    content: 'Add to watchlist';
+    position: absolute;
+    background-color: #1212128a;
+    top: 44%;
+    left: 31%;
+    padding: 6px;
+    border: solid 1px #1212128a;
+    border-radius: 6px;
+}
+
+#database{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-right: 50px;
+    color: white;
+    font-family: 'poppins', sans-serif;
+}
+#database h1{
+    font-size: 40px;
+}
+#database p{
+    font-size: 16px; 
+}
+#rating-btn{
+    margin-left: 8px;
+    margin-right: 8px;
+}
+#s-para{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+#dates{
+    color: rgba(249, 242, 242, 0.756);
+    font-size: 10px;
+    font-weight: lighter;
+}
+@media(max-width:850px){
+    #search-page{
+        display: flex;
+        flex-direction: column;
+    }
+    #search-page img{
+        width:130px;
+        height: 180px;
+        margin: 20px 30px 0px 40px;
+    }
+    #database{
+        align-items: center;
+        justify-content: space-around;
+        text-align: center;
+        margin-right: 0px;
+        color: whitesmoke;
+        font-family: 'poppins', sans-serif;
+    }
+    #database h1{
+        font-size: 30px;
+    }
+    #database h2{
+       font-size: 20px;
+    }
+    #database p{
+        font-size: 14px;
+        padding: 0px 60px 0px 60px;
+    } 
+    #s-para{
+        align-items: center;
+        text-align: center;
+        margin-bottom:50px;
+    }
+    #display-video iframe{
+        height: 220px;
+        width: 300px;
+        position: absolute;
+        left: 0%;
+    }
+} 
+
+#movie-genre{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    margin:0px 40px;
+    padding-top: 100px;
+    overflow-y: hidden;
+} 
+#movie-genre h2{
+    position: absolute;
+    font-family: 'poppins',sans-serif;
+    font-size: 30px;
+    color: whitesmoke;
+    top: 60px;
+    left: 60px;
+}
+.img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 100px;
+    color: whitesmoke;
+    
+    
+} 
+.img img{
+    width: 150px;
+    height: 200px;
+    margin: 20px;
+    border: solid 1px #121212;
+    border-radius: 8px;
+}
+#watchlist-movie{
+    display: grid;
+    grid-template-rows: repeat(1fr);
+    gap: 25px;
+    margin-top: 20px;
+}
+#watchlist-movie img{
+    width: 133.33px;
+    height: 200px;
+    border: solid 1px #121212;
+    border-radius: 10px;
+}
+#watchlist-movie h1{
+    font-family: 'poppins',sans-serif;
+    font-size: 35px;
+    color: rgb(242, 52, 242);
+    padding: 20px 0px 0px 20px;
+}
+.list{
+    display: flex;
+    box-sizing: border-box;
+    border: solid 1px  #161212;
+    border-radius:10px;
+    margin: 10px 25px 10px 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: whitesmoke;
+    font-family: 'poppins',sans-serif;
+}
+.list:hover{
+    box-shadow: 0px 0px 10px rgba(245, 245, 245, 0.867);
+}
+.information{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    margin: 20px;
+    font-size: 14px;
+}
+.information p{
+    padding-top: 30px;
+}
+#userid-container{
+    display: none;
+}

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styleTV.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
+    <script src="movie.js" type="module"></script>
+    <script src="tvshow.js" type="module"></script>
+   
+    
+
+    <title>One Stop Movie</title>
+</head>
+<body id="bgcolor">
+    
+    <!--navbar-->
+
+    <div id="navbar">
+        <div class="container">
+            <div class="header">
+               <a href="#"><h10 id="head"><i class="bi bi-camera-reels" style=color:whitesmoke;></i> OneStopMovie</h10></a>
+            </div>
+            <div class="links">
+                <div class="link"><button type="button" id="movie">Movies</button>
+                    <div class="drop-down">
+                        <ul>
+                            <button type="button" id="Drama"><li>Drama</li></button>
+                            <button type="button" id="Action"><li>Action</li></button>
+                            <button type="button" id="Comedy"><li>Comedy</li></button>
+                            <button type="button" id="Family"><li>Family</li></button>
+                        </ul>
+                    </div>
+                </div>
+                <div class="link"><button type="button" id="tv">TV Shows</button>
+                    <div class="drop-down-tv">
+                        <ul>
+                            <button type="button" id="Dramatv"><li>Drama</li></button>
+                            <button type="button" id="Actiontv"><li>Action</li></button>
+                            <button type="button" id="Comedytv"><li>Comedy</li></button>
+                            <button type="button" id="Familytv"><li>Family</li></button>
+                        </ul>
+                    </div>  
+                </div>
+                <div class="link"><button type="button" id="watchlist-btn">Watchlist</button>
+                    <div class="drop-down-wl">
+                        <ul>
+                            <button type="button" id="moviebtn"><li>Movies</li></button>
+                            <button type="button" id="showsbtn"><li>TV Shows</li></button>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="link"><button type="button" id="profile"><i class="bi bi-person-circle"></i></button>
+                    <div class="drop-down-profile">
+                        <ul>
+                            <button type="button" ><li id="u-name"></li></button>
+                            <button type="button" id="Login" onclick="click()" style=><li>Signup / Login</li></button>
+                            <button type="button" id="signOutButton">SignOut</button>
+                        </ul>
+                    </div>
+                </div>
+                <div class="link"><div id="toggle-btn"><button type="button" id="toggle" onclick="toggle()"><i class="bi bi-brightness-high-fill"></i></button></div></div>
+            </div>
+            <div class="main-menu">
+                <div class="link"><button type="button" id="movie">Movies</button>
+                    <div class="drop-down-menu">
+                        <ul>
+                            <button type="button" id="Dramamenu"><li>Drama</li></button>
+                            <button type="button" id="Actionmenu"><li>Action</li></button>
+                            <button type="button" id="Comedymenu"><li>Comedy</li></button>
+                            <button type="button" id="Familymenu"><li>Family</li></button>
+                        </ul>
+                    </div>
+                </div>
+                <div class="link"><button type="button" id="tv">TV Shows</button>
+                    <div class="drop-down-menu">
+                        <ul>
+                            <button type="button" id="Dramatvmenu"><li>Drama</li></button>
+                            <button type="button" id="Actiontvmenu"><li>Action</li></button>
+                            <button type="button" id="Comedytvmenu"><li>Comedy</li></button>
+                            <button type="button" id="Familytvmenu"><li>Family</li></button>
+                        </ul>
+                    </div>  
+                </div>
+            </div>
+        </div>
+        <div id="hamburger">
+            <button id="button"> <i class="fa-solid fa-bars fa-2xl"></i></button>
+        </div>
+    </div>
+
+    <!--goback btn-->
+    <div id="return"><button type="button" id="1"><i class="bi bi-arrow-left"></i></button></div>
+    
+    <!--showcase-->
+    <div id="showcase">
+        <div class="hero-image"></div>
+        <div class="showcase-container">
+            <h1 id="header">Welcome</h1>
+            <div class="form-group">
+                <input type="text" placeholder="Search for a Movie, TV Show and more" >
+                <button type="button" id="searchbtn">Search</button>
+            </div>
+        </div>
+    </div>
+<script>
+    //dark-mode//
+    function toggle(){
+        document.getElementById('toggle-btn').innerHTML=`<button type="button" id="toggleday" onclick="toggleday()"><i class="bi bi-moon-fill"></i></button>` 
+        document.getElementById('bgcolor').style.backgroundColor="rgba(255, 255, 255, 0.877)"
+        document.getElementById('movie-box').style.color="black"
+        document.getElementById('tv-box').style.color="black"
+        document.getElementById('tv-box').style.background="linear-gradient(rgba(235, 14, 206, 0.785),#f8e4f5fe)"
+        document.querySelector('.form-group input').style.backgroundColor="rgba(255, 255, 255)"
+        document.querySelector('.form-group input').style.color="black"
+        document.getElementById('navbar').style.background="linear-gradient(to right,rgba(235, 14, 206, 0.800),#f8e4f5fe)"
+        document.getElementById('head').style.color="whitesmoke"
+        document.querySelector('.main-menu').style.background="linear-gradient(rgba(235, 14, 206, 0.700),#f8e4f5fe)"
+        var btn=document.getElementsByClassName('link')
+        for(let i=0;i<btn.length;i++){
+            btn[i].firstElementChild.style.backgroundColor="rgba(0, 0, 0, 0.01)"
+            btn[i].firstElementChild.style.color="black"
+        }
+        document.getElementById('hamburger').firstElementChild.style.color="black"
+    }
+    function toggleday(){
+        document.getElementById('toggle-btn').innerHTML=`<button type="button" id="toggle" onclick="toggle()"><i class="bi bi-brightness-high-fill"></i></button>`
+        document.getElementById('bgcolor').style.backgroundColor="#191717"
+        document.getElementById('movie-box').style.color="whitesmoke"
+        document.getElementById('tv-box').style.color="whitesmoke"
+        document.getElementById('tv-box').style.background="linear-gradient(rgba(235, 14, 206, 0.785),#121212)"
+        document.querySelector('.form-group input').style.backgroundColor="#121212"
+        document.querySelector('.form-group input').style.color="whitesmoke"
+        document.getElementById('navbar').style.background="#121212e4"
+        document.getElementById('head').style.color="rgb(223, 66, 237)"
+        document.querySelector('.main-menu').style.background="#121212de"
+        var btn=document.getElementsByClassName('link')
+        for(let i=0;i<btn.length;i++){
+            btn[i].firstElementChild.style.backgroundColor="#121212e4"
+            btn[i].firstElementChild.style.color="whitesmoke"
+        }
+        document.getElementById('hamburger').firstElementChild.style.color="whitesmoke"
+        }
+    
+   
+    document.querySelector('#movie').addEventListener('click',function drop(){
+    var x=document.querySelector('.drop-down')
+    x.classList.add("active")
+})
+    document.querySelector('.drop-down').addEventListener('mouseleave',function(){
+        var x=document.querySelector('.drop-down')
+        x.classList.remove("active")
+})
+    document.querySelector('#tv').addEventListener('click',function drop(){
+        var x=document.querySelector('.drop-down-tv')
+        x.classList.add("active")
+})
+    document.querySelector('.drop-down-tv').addEventListener('mouseleave',function(){
+        var x=document.querySelector('.drop-down-tv')
+        x.classList.remove("active")
+})
+    document.querySelector('#watchlist-btn').addEventListener('click',function drop(){
+        var x=document.querySelector('.drop-down-wl')
+        x.classList.add("active")
+})
+    document.querySelector('.drop-down-wl').addEventListener('mouseleave',function(){
+        var x=document.querySelector('.drop-down-wl')
+        x.classList.remove("active")
+})
+document.getElementById('profile').addEventListener('click',function(){
+    var c=document.querySelector('.drop-down-profile')
+    c.classList.add("active")
+})
+var c=document.querySelector('.drop-down-profile')
+c.addEventListener('mouseleave',function(){
+    c.classList.remove('active')
+})
+        document.querySelector('#Login').addEventListener('click',function click(){
+            var x=document.querySelector('#Login')
+            x.style.display="none"
+            window.location.href="https://adityaaryan01.github.io/OneStopMovieAuth/"
+        })
+
+    
+</script>   
+
+<!--Trending Movies-->
+
+<div id="movie-box">
+    <h2>Trending Movies</h2>
+    <div id="img-grid">
+    </div>
+</div>
+
+<!--Div Class to open page-->
+<div id="overview-class"></div>
+<div id="overviewtv-class"></div>
+<div id="display-video"></div>
+
+
+<!--Trending TV Shows-->
+<div id="tv-box">
+    <h2>Trending TV Shows</h2>
+    <div id="tv-grid">
+    </div>
+</div>
+
+<!--Getting Watchlist Movie-->
+<div id="watchlist-class">
+    <div id="userid-container"></div>
+</div>
+
+<!--Notification popup-->
+<div class="popup">
+    <button type="button" class="Update">Updated <i class="bi bi-check2-circle"></i></button>
+</div>
+
+</body>
+</html>
